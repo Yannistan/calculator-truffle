@@ -14,12 +14,17 @@ module.exports = async (deployer) => {
   const multiplierInstance = await Multiplier.deployed();
   // divisorInstance is an instance of the already deployed Divisor contract
   const divisorInstance = await Divisor.deployed();
+
+  const adderInstance = await Adder.deployed();
+
+  const suberInstance = await Suber.deployed();
+
   // eslint-disable-next-line no-unused-vars
   const calculatorInstance = await deployer.deploy(
     Calculator,
-    Adder.address, // use Adder address from artifact
-    Suber.address, // use Suber address from artifact
+    adderInstance.address, // use Adder address from artifact
+    suberInstance.address, // use Suber address from artifact
     multiplierInstance.address, // use Multiplier address from instance
-    divisorInstance.address, // use Divisor address from instance
+    divisorInstance.address // use Divisor address from instance
   );
 };

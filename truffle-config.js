@@ -11,14 +11,14 @@ module.exports = {
       // eslint-disable-next-line camelcase
       network_id: '*', // Any network (default: none)
     },
-    goerli: {
+    rinkeby: {
       provider: () =>
         new HDWalletProvider(
           mnemonic,
           'https://goerli.infura.io/v3/1f879cc9d1a34e2b8400771cbc50c52e',
         ),
       // eslint-disable-next-line camelcase
-      network_id: 5,
+      network_id: 4,
       gas: 5500000,
       confirmations: 0,
       timeoutBlocks: 200,
